@@ -16,6 +16,11 @@
 
         <mapping class="fa.training.entity.Employee"></mapping>
         <mapping class="fa.training.entity.Account"></mapping>
-        <mapping class="fa.training.entity.Deparment"></mapping>
+        <mapping class="fa.training.entity.Department"></mapping>
+        <mapping class="fa.training.entity.Project"></mapping>
+        <mapping class="fa.training.entity.Skill"></mapping>
+        <mapping class="fa.training.entity.EmployeeSkill"></mapping>
+        <mapping class="fa.training.entity.EmployeeSkillID"></mapping>
+        <mapping class="fa.training.entity.EmployeeSkillEmbedded"></mapping>
     </session-factory>
 </hibernate-configuration>

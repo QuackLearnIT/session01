@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface AccountDao {
 
-    Optional<Account> findById(String account);
+    Optional<Account> findById(String empAccount);
 }

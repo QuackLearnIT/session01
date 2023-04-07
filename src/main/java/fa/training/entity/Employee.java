@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Set;
+
 //@Table(name = "Employee")
 @Entity //(name = "Employees")
 @Getter
@@ -32,9 +34,15 @@ public class Employee {
 
     @OneToOne(mappedBy = "employee",
             orphanRemoval = true,
-            cascade = CascadeType.PERSIST)
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Account account;
 
     @ManyToOne
-    private Deparment department;
+    private Department department;
+
+    @ManyToMany(mappedBy = "members")
+    private Set<Project> projects;
+
+    @OneToMany(mappedBy = "employee")
+    private Set<EmployeeSkill> employeeSkills;
 }

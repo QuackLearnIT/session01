@@ -22,6 +22,7 @@ class EmployeeDaoImplTest {
     @BeforeAll
     static void beforeAll() {
         employeeDao = new EmployeeDaoImpl();
+        accountDao = new AccountDaoImpl();
     }
 
     @Test
@@ -44,11 +45,11 @@ class EmployeeDaoImplTest {
     void cascadeTypePersist_Success_Test() {
         Employee employee = new Employee();
         employee.setFullName("emp03");
-        employee.setEmail("emp3@gmail.com");
+        employee.setEmail("emp03@gmail.com");
 
         String empAccount = "emp03_account";
         Account account = new Account();
-        account.setEmpAccount("emp03_account");
+        account.setEmpAccount(empAccount);
         account.setPassword("123123");
         account.setEmployee(employee);
         employee.setAccount(account);
@@ -57,5 +58,6 @@ class EmployeeDaoImplTest {
         Optional<Account> accountOptional = accountDao.findById(empAccount);
         assertTrue(accountOptional.isPresent()
                 && accountOptional.get().getEmpAccount().equals(empAccount));
+
     }
 }

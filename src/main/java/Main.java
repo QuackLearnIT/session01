@@ -30,6 +30,5 @@ public class Main {
         employeeDao.create(employee2);
 
         employeeDao.getAll().forEach(System.out::println);
-
     }
 }
